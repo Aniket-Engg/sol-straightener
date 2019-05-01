@@ -1,7 +1,7 @@
 {
   "name": "sol-straightener",
   "version": "1.0.0",
-  "description": "Straighten files by placing the imported gifile contents",
+  "description": "Straighten/Flatten Solidity files from js file",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
