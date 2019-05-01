@@ -1,0 +1,23 @@
+{
+  "name": "sol-straightener",
+  "version": "1.0.0",
+  "description": "Straighten files by placing the imported gifile contents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aniket-Engg/sol-straightener.git"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum"
+  ],
+  "author": "Aniket-Engg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aniket-Engg/sol-straightener/issues"
+  },
+  "homepage": "https://github.com/Aniket-Engg/sol-straightener#readme"
+}
