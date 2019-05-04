@@ -4,7 +4,7 @@
   "description": "Straighten/Flatten Solidity files from js file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/Aniket-Engg/sol-straightener/issues"
   },
-  "homepage": "https://github.com/Aniket-Engg/sol-straightener#readme"
+  "homepage": "https://github.com/Aniket-Engg/sol-straightener#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
 }

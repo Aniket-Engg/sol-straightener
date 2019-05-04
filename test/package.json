@@ -1,0 +1,17 @@
+{
+  "name": "sol-straightener-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "straighten.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Aniket-Engg",
+  "license": "MIT",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.2.0"
+  }
+}
