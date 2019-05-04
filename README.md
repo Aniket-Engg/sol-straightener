@@ -4,21 +4,18 @@
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Aniket-Engg/sol-straightener)
 
 # sol-straightener
-sol-straightener is an NPM package to straighten the Solidity smart contracts. It fetches the content of all imported files and returns the straightened data. It works inside a file only. 
+sol-straightener is an NPM package to straighten the Solidity smart contracts for various purposes. It fetches the content of each imported file and returns the straightened version. It works inside a file. 
 
 ## Install
-As a dependency, to use inside a file:
 ```
 npm install --save sol-straightener
 ```
-
 ## How to use
-
 ```
     const Straightener = require('sol-straightener');
     let result = await Straightener.straighten(<solidity/file/path>);
 ```
-A import straightened file contents will be returned which can be used for further processing or writing a file.
+An import straightened file contents will be returned which can be used for further processing or writing a file.
 
 ## Contribution
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Aniket-Engg/sol-straightener/issues)
