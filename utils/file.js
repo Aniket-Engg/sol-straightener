@@ -43,7 +43,7 @@ const processImports = async (file, content) => {
     let group='';
     const result = [];
     regEx.import.exec(''); // Resetting state of RegEx
-    while (group = regEx.import.exec(content)) {  
+    while (group = regEx.import.exec(content)) {
       const _importFile = group[1];
       let filePath = path.join(path.dirname(file), _importFile);
       if(!fs.existsSync(filePath)){

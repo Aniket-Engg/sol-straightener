@@ -9,6 +9,10 @@ cache:
 jobs:
   include:
     - stage: tests
+      name: "Linter"
+      script: npm run lint
+      
+    - stage: tests
       name: "Unit tests"
       script: 
         - cd test && npm install 
