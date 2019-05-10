@@ -12,6 +12,14 @@ describe('sol-straightener', () => {
     expect(Buffer.from(strtnFile)).to.deep.equal(strtnContent);
   });
 
+  it('Fails for contract with non existing file import', async () => {
+    try{
+      await Straightener.straighten(__dirname + '/contracts/SampleWithImportNotExisting.sol');
+    }catch(error){
+      expect(error.message).to.include('no such file or directory');
+    }
+  });
+
   it('Contract with nested imports', async () => {
     const strtnFile = await Straightener.straighten(__dirname + '/contracts/SampleWithNestedImport.sol');
     const strtnContent = fs.readFileSync(__dirname + '/contracts/straightened/SampleWithNestedImport.sol');
@@ -27,6 +35,18 @@ describe('sol-straightener', () => {
   it('Contract with imports from node_modules', async () => {
     const strtnFile = await Straightener.straighten(__dirname + '/contracts/ImportFromNodeModules.sol');
     const strtnContent = fs.readFileSync(__dirname + '/contracts/straightened/ImportFromNodeModules.sol');
+    // expect(Buffer.from(strtnFile)).to.deep.equal(strtnContent);
+  });
+
+  it('Contract with multiple imports from Github', async () => {
+    const strtnFile = await Straightener.straighten(__dirname + '/contracts/MultiImportFromGithub.sol');
+    const strtnContent = fs.readFileSync(__dirname + '/contracts/straightened/MultiImportFromGithub.sol');
+    expect(Buffer.from(strtnFile)).to.deep.equal(strtnContent);
+  });
+
+  it('Contract with nested imports from Github', async () => {
+    const strtnFile = await Straightener.straighten(__dirname + '/contracts/NestedImportFromGithub.sol');
+    const strtnContent = fs.readFileSync(__dirname + '/contracts/straightened/NestedImportFromGithub.sol');
     expect(Buffer.from(strtnFile)).to.deep.equal(strtnContent);
   });
 });
