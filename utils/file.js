@@ -29,6 +29,7 @@ const processFile = async (file, fromGithub, root = false) => {
     if(fromGithub){
       const metadata = regEx.github.exec(file);
       const url = 'https://api.github.com/repos/' + metadata[3] + '/contents/' + metadata[4];
+      axios.defaults.headers.post['User-Agent'] = 'sol-straightener';
       contents = Buffer.from((await axios.get(url)).data.content, 'base64').toString();
       contents = contents.replace(regEx.pragma, '').trim();
       imports = await processImports(file, contents, path.dirname(metadata[0]));
