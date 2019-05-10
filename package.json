@@ -4,7 +4,7 @@
   "description": "Straighten/Flatten Solidity file from js file",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha --timeout 10000",
+    "test": "nyc mocha --timeout 40000",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -33,5 +33,8 @@
     "eslint": "^5.16.0",
     "mocha": "^6.1.4",
     "nyc": "^14.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
