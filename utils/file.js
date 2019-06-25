@@ -19,11 +19,8 @@ const getNodeModulesFolders = async (dir) => {
   const folders = [];
   for (let partIdx = 0; partIdx < parts.length; partIdx++) {
     const part = parts[partIdx];
-    if (part === '') {
-      continue;
-    }
 
-    if (folders.length == 0) {
+    if (folders.length === 0) {
       folders.push(path.join(path.sep, part, 'node_modules'));
     }
     else {
