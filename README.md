@@ -23,7 +23,7 @@ An import straightened file contents will be returned which can be used for furt
 ## Support
 Currently it handles `import` of files from:
 * relative directories, e.g; `import "./lib/SafeMath.sol";`
-* `node_modules` directory, e.g; `import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";`
+* All parent `node_modules` directories, e.g; `import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";`
 * Github, e.g; `import "github.com/oraclize/ethereum-api/oraclizeAPI_0.5.sol";`
 
 ## Contribution
