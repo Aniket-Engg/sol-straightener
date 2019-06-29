@@ -1,7 +1,7 @@
 'use strict';
 
 const Straightener = require('../'),
-  expect  = require('chai').expect,
+  expect = require('chai').expect,
   fs = require('fs');
 
 describe('sol-straightener', () => {
@@ -13,9 +13,9 @@ describe('sol-straightener', () => {
   });
 
   it('Fails for contract with non existing file import', async () => {
-    try{
+    try {
       await Straightener.straighten(__dirname + '/contracts/SampleWithImportNotExisting.sol');
-    }catch(error){
+    } catch (error) {
       expect(error.message).to.include('no such file or directory');
     }
   });
@@ -35,7 +35,13 @@ describe('sol-straightener', () => {
   it('Contract with imports from node_modules', async () => {
     const strtnFile = await Straightener.straighten(__dirname + '/contracts/ImportFromNodeModules.sol');
     const strtnContent = fs.readFileSync(__dirname + '/contracts/straightened/ImportFromNodeModules.sol');
-    // expect(Buffer.from(strtnFile)).to.deep.equal(strtnContent);
+    expect(Buffer.from(strtnFile)).to.deep.equal(strtnContent);
+  });
+
+  it('Contract with imports from parent node_modules', async () => {
+    const strtnFile = await Straightener.straighten(__dirname + '/contracts/ImportFromParentNodeModules.sol');
+    const strtnContent = fs.readFileSync(__dirname + '/contracts/straightened/ImportFromParentNodeModules.sol');
+    expect(Buffer.from(strtnFile)).to.deep.equal(strtnContent);
   });
 
   it('Contract with multiple imports from Github', async () => {
