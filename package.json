@@ -36,7 +36,7 @@
     "@0xcert/ethereum-erc721": "2.0.0"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "get-installed-path": "~4.0.8"
   }
 }
